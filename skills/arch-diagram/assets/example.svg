@@ -1,0 +1,221 @@
+<!-- BRAND: neutral -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="940" viewBox="0 0 1200 940">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000015"/>
+    </filter>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#475569"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+    <style>
+      text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+      .title    { font-size: 18px; font-weight: 700; }
+      .label    { font-size: 13px; font-weight: 600; fill: #1e293b; }
+      .label-sm { font-size: 11px; fill: #475569; }
+      .label-xs { font-size: 10px; fill: #64748b; }
+      .mono     { font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 10px; fill: #64748b; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="940" fill="#ffffff"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1200" height="48" fill="#1e293b"/>
+  <text x="20" y="30" class="title" fill="#ffffff">Document Ingestion Pipeline</text>
+  <text x="1180" y="30" text-anchor="end" class="label-sm" fill="#94a3b8">Enterprise Knowledge Base — replace brand colors via references/branding.md</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LANE 1 — Sources (blue) -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="20" y="60" width="1160" height="230" fill="#eff6ff" rx="10" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="20" y="60" width="6" height="230" fill="#3b82f6" rx="3"/>
+  <text x="40" y="82" class="label" fill="#1e40af">Sources</text>
+
+  <!-- SharePoint source -->
+  <rect x="50" y="96" width="130" height="50" fill="#ffffff" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="115" y="116" text-anchor="middle" class="label">SharePoint</text>
+  <text x="115" y="132" text-anchor="middle" class="label-xs">Document Library</text>
+
+  <!-- Arrow -->
+  <line x1="180" y1="121" x2="220" y2="121" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Delta Query -->
+  <rect x="220" y="96" width="130" height="50" fill="#ffffff" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="285" y="116" text-anchor="middle" class="label">Delta Query</text>
+  <text x="285" y="132" text-anchor="middle" class="label-xs">new / modified / deleted</text>
+
+  <!-- Arrow -->
+  <line x1="350" y1="121" x2="390" y2="121" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Download -->
+  <rect x="390" y="96" width="130" height="50" fill="#ffffff" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="455" y="116" text-anchor="middle" class="label">Download</text>
+  <text x="455" y="132" text-anchor="middle" class="label-xs">PDF · DOCX · PPTX</text>
+
+  <!-- Separator line between SP and Web rows -->
+  <line x1="40" y1="165" x2="1160" y2="165" stroke="#bfdbfe" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Web Crawler source -->
+  <rect x="50" y="178" width="130" height="50" fill="#ffffff" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="115" y="198" text-anchor="middle" class="label">Web Crawler</text>
+  <text x="115" y="214" text-anchor="middle" class="label-xs">Intranet / Portal</text>
+
+  <!-- Arrow -->
+  <line x1="180" y1="203" x2="220" y2="203" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- BFS Crawl -->
+  <rect x="220" y="178" width="130" height="50" fill="#ffffff" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="285" y="198" text-anchor="middle" class="label">BFS Crawl</text>
+  <text x="285" y="214" text-anchor="middle" class="label-xs">HTML + linked docs</text>
+
+  <!-- Arrow -->
+  <line x1="350" y1="203" x2="390" y2="203" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Manifest -->
+  <rect x="390" y="178" width="130" height="50" fill="#ffffff" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="455" y="198" text-anchor="middle" class="label">Manifest</text>
+  <text x="455" y="214" text-anchor="middle" class="label-xs">items + parent context</text>
+
+  <!-- Combined arrow to parsing lane -->
+  <line x1="455" y1="146" x2="455" y2="165" stroke="#475569" stroke-width="1.5"/>
+  <line x1="455" y1="228" x2="455" y2="248" stroke="#475569" stroke-width="1.5"/>
+  <line x1="455" y1="248" x2="590" y2="248" stroke="#475569" stroke-width="1.5"/>
+  <line x1="520" y1="121" x2="590" y2="121" stroke="#475569" stroke-width="1.5"/>
+  <line x1="590" y1="121" x2="590" y2="340" stroke="#475569" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LANE 2 — Processing (teal) -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="20" y="302" width="1160" height="260" fill="#f0fdfa" rx="10" stroke="#0d9488" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="20" y="302" width="6" height="260" fill="#0d9488" rx="3"/>
+  <text x="40" y="324" class="label" fill="#115e59">Processing</text>
+
+  <!-- Entry arrow from sources -->
+  <line x1="590" y1="302" x2="590" y2="340" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Decision diamond: file type -->
+  <polygon points="590,345 650,375 590,405 530,375" fill="#fefce8" stroke="#eab308" stroke-width="1.5"/>
+  <text x="590" y="371" text-anchor="middle" class="label-sm" fill="#854d0e">Format?</text>
+  <text x="590" y="384" text-anchor="middle" class="label-xs" fill="#854d0e">PDF · DOCX · HTML</text>
+
+  <!-- PDF/DOCX branch (left) -->
+  <text x="505" y="370" text-anchor="middle" class="label-xs" fill="#854d0e">PDF/DOCX</text>
+  <line x1="530" y1="375" x2="450" y2="375" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="310" y="352" width="140" height="46" fill="#ffffff" rx="8" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="380" y="370" text-anchor="middle" class="label">Docling Parser</text>
+  <text x="380" y="385" text-anchor="middle" class="label-xs">OCR · tables · images</text>
+
+  <!-- HTML branch (right) -->
+  <text x="670" y="370" text-anchor="middle" class="label-xs" fill="#854d0e">HTML</text>
+  <line x1="650" y1="375" x2="730" y2="375" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="730" y="352" width="140" height="46" fill="#ffffff" rx="8" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="800" y="370" text-anchor="middle" class="label">Docling Parser</text>
+  <text x="800" y="385" text-anchor="middle" class="label-xs">HTML → markdown</text>
+
+  <!-- Converge to markdown -->
+  <line x1="380" y1="398" x2="380" y2="430" stroke="#475569" stroke-width="1.5"/>
+  <line x1="800" y1="398" x2="800" y2="430" stroke="#475569" stroke-width="1.5"/>
+  <line x1="380" y1="430" x2="800" y2="430" stroke="#475569" stroke-width="1.5"/>
+  <line x1="590" y1="430" x2="590" y2="450" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Chunking -->
+  <rect x="510" y="450" width="160" height="46" fill="#ffffff" rx="8" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="590" y="468" text-anchor="middle" class="label">Chunk</text>
+  <text x="590" y="483" text-anchor="middle" class="label-xs">parent / child · overlap</text>
+
+  <!-- Arrow to enrichment -->
+  <line x1="670" y1="473" x2="710" y2="473" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Enrichment -->
+  <rect x="710" y="450" width="160" height="46" fill="#ffffff" rx="8" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="790" y="468" text-anchor="middle" class="label">Enrich</text>
+  <text x="790" y="483" text-anchor="middle" class="label-xs">context prefix · metadata</text>
+
+  <!-- Arrow to storage -->
+  <line x1="870" y1="473" x2="910" y2="473" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Embed -->
+  <rect x="910" y="450" width="160" height="46" fill="#ffffff" rx="8" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="990" y="468" text-anchor="middle" class="label">Embed</text>
+  <text x="990" y="483" text-anchor="middle" class="label-xs">LLM Gateway · batch</text>
+
+  <!-- Arrow down to storage -->
+  <line x1="990" y1="496" x2="990" y2="574" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LANE 3 — Storage (gray) -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="20" y="574" width="1160" height="230" fill="#f8fafc" rx="10" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="20" y="574" width="6" height="230" fill="#94a3b8" rx="3"/>
+  <text x="40" y="596" class="label" fill="#475569">Storage</text>
+
+  <!-- Vector Store cylinder -->
+  <rect x="910" y="620" width="140" height="60" fill="#ffffff" rx="0" stroke="#0d9488" stroke-width="1.5"/>
+  <ellipse cx="980" cy="620" rx="70" ry="12" fill="#e8fdf9" stroke="#0d9488" stroke-width="1.5"/>
+  <ellipse cx="980" cy="680" rx="70" ry="12" fill="#e8fdf9" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="980" y="647" text-anchor="middle" class="label">Vector Store</text>
+  <text x="980" y="663" text-anchor="middle" class="label-xs">Azure AI Search</text>
+
+  <!-- Blob cache -->
+  <line x1="590" y1="574" x2="590" y2="614" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="510" y="614" width="160" height="50" fill="#ffffff" rx="8" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="590" y="634" text-anchor="middle" class="label">Blob Cache</text>
+  <text x="590" y="649" text-anchor="middle" class="label-xs">parsed markdown · CDN</text>
+
+  <!-- State DB -->
+  <line x1="380" y1="574" x2="380" y2="614" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="300" y="614" width="160" height="50" fill="#ffffff" rx="8" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="380" y="634" text-anchor="middle" class="label">State DB</text>
+  <text x="380" y="649" text-anchor="middle" class="label-xs">CDC hashes · delta links</text>
+
+  <!-- Arrow from processing to state DB -->
+  <line x1="380" y1="398" x2="380" y2="574" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- CDC annotations -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="50" y="760" width="340" height="30" fill="#fef9c3" rx="6" stroke="#eab308" stroke-width="1"/>
+  <text x="62" y="779" class="label-xs" fill="#854d0e">⚡ L1 CDC:</text>
+  <text x="110" y="779" class="label-xs">SP delta query / manifest diff detects new · modified · deleted</text>
+
+  <rect x="400" y="760" width="300" height="30" fill="#fef9c3" rx="6" stroke="#eab308" stroke-width="1"/>
+  <text x="412" y="779" class="label-xs" fill="#854d0e">⚡ L2 CDC:</text>
+  <text x="460" y="779" class="label-xs">source_hash (SHA-256 of file bytes)</text>
+
+  <rect x="710" y="760" width="300" height="30" fill="#fef9c3" rx="6" stroke="#eab308" stroke-width="1"/>
+  <text x="722" y="779" class="label-xs" fill="#854d0e">⚡ L3 CDC:</text>
+  <text x="770" y="779" class="label-xs">chunk_hash + logic_version per chunk</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- Legend -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="20" y="808" width="1160" height="112" fill="#f8fafc" rx="8" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="36" y="828" class="label-xs" fill="#94a3b8">LEGEND</text>
+
+  <rect x="36" y="838" width="14" height="14" fill="#eff6ff" rx="2" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="56" y="850" class="label-xs">Sources lane</text>
+
+  <rect x="150" y="838" width="14" height="14" fill="#f0fdfa" rx="2" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="170" y="850" class="label-xs">Processing lane</text>
+
+  <rect x="280" y="838" width="14" height="14" fill="#f8fafc" rx="2" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="300" y="850" class="label-xs">Storage lane</text>
+
+  <polygon points="410,845 422,851 410,857 398,851" fill="#fefce8" stroke="#eab308" stroke-width="1"/>
+  <text x="428" y="855" class="label-xs">Decision point</text>
+
+  <line x1="530" y1="851" x2="560" y2="851" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="568" y="855" class="label-xs">Data flow</text>
+
+  <line x1="660" y1="851" x2="690" y2="851" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="698" y="855" class="label-xs">Async / side-effect</text>
+
+  <rect x="36" y="868" width="1130" height="1" fill="#e2e8f0"/>
+  <text x="36" y="884" class="label-xs" fill="#94a3b8">This diagram uses the neutral palette. Apply your company's brand colors via</text>
+  <text x="36" y="898" class="mono">references/branding.md</text>
+  <text x="155" y="898" class="label-xs" fill="#94a3b8">— swap 3 hex values (primary stroke, secondary stroke, title bar) to match your brand.</text>
+</svg>
