@@ -23,7 +23,7 @@ More skills coming.
 Run this command inside Claude Code:
 
 ```
-/plugin marketplace add <your-github-username>/claude-skills
+/plugin marketplace add sawallesalfo/claude-skills
 ```
 
 Then install a skill:
