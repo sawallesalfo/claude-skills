@@ -28,6 +28,12 @@ More plugins coming.
 /plugin install arch-diagram@sawallesalfo-claude-skills
 ```
 
+### Step 3 — Reload plugins
+
+```
+/reload-plugins
+```
+
 That's it. Once installed, just describe what you want — Claude will use the skill automatically:
 > *"Create an architecture diagram for our data pipeline"*
 > *"Draw a swimlane diagram showing the user authentication flow"*
