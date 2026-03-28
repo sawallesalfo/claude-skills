@@ -18,34 +18,42 @@ More skills coming.
 
 ## Installation
 
-### Option 1 — Claude Code marketplace (recommended)
+### Option 1 — Install as plugin from GitHub (recommended)
 
-Run this command inside Claude Code:
+Run this inside Claude Code:
 
 ```
-/plugin marketplace add sawallesalfo/claude-skills
+/plugin install sawallesalfo/claude-skills
 ```
-
-Then install a skill:
-1. Run `/plugin install`
-2. Select `claude-skills`
-3. Select `arch-diagram`
 
 Once installed, just describe what you want — Claude will use the skill automatically:
 > *"Create an architecture diagram for our data pipeline"*
 > *"Draw a swimlane diagram showing the user authentication flow"*
 
-### Option 2 — Manual install
+### Option 2 — Copy skill to your project
 
-Copy the skill folder to your local Claude plugins directory:
+Add the skill directly to your project (tracked in git, available to your team):
+
+```bash
+# Copy to your project's .claude/skills/ directory
+mkdir -p .claude/skills
+cp -r skills/arch-diagram .claude/skills/arch-diagram
+```
+
+### Option 3 — Copy skill globally (personal)
+
+Make the skill available across all your projects:
 
 ```bash
 # macOS / Linux
-cp -r skills/arch-diagram ~/.claude/plugins/skills/
+mkdir -p ~/.claude/skills
+cp -r skills/arch-diagram ~/.claude/skills/arch-diagram
 
-# Windows
-xcopy skills\arch-diagram %USERPROFILE%\.claude\plugins\skills\arch-diagram /E /I
+# Windows (PowerShell)
+Copy-Item -Recurse skills\arch-diagram $env:USERPROFILE\.claude\skills\arch-diagram
 ```
+
+After any option, invoke with `/arch-diagram` or just ask Claude to create a diagram — it will detect the skill automatically from the description.
 
 ---
 
@@ -60,13 +68,13 @@ A skill is a folder with a `SKILL.md` file. Claude reads it when the task matche
 ```
 skills/
 └── arch-diagram/
-    ├── SKILL.md              ← instructions + metadata (required)
+    ├── SKILL.md              <- instructions + metadata (required)
     ├── references/
-    │   └── branding.md       ← how to apply company colors
+    │   └── branding.md       <- how to apply company colors
     ├── scripts/
-    │   └── svg_to_png.py     ← SVG → PNG conversion
+    │   └── svg_to_png.py     <- SVG -> PNG conversion
     └── assets/
-        ├── example.svg       ← reference diagram
+        ├── example.svg       <- reference diagram
         └── example.png
 ```
 
@@ -78,9 +86,9 @@ See the [Agent Skills spec](https://agentskills.io) and [Anthropic's documentati
 
 After installing `arch-diagram`, ask Claude:
 
-> *"Draw a 3-lane swimlane diagram for our document ingestion pipeline: sources → processing → storage. Use the green & gold palette from branding.md."*
+> *"Draw a 3-lane swimlane diagram for our document ingestion pipeline: sources -> processing -> storage. Use the green & gold palette from branding.md."*
 
-Claude will generate an SVG, export a 2× PNG, and report both paths.
+Claude will generate an SVG, export a 2x PNG, and report both paths.
 
 ---
 

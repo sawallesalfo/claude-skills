@@ -1,0 +1,8 @@
+{
+  "name": "claude-skills",
+  "description": "Reusable skills for Claude Code — architecture diagrams, technical documentation visuals",
+  "version": "1.0.0",
+  "author": {
+    "name": "sawallesalfo"
+  }
+}
