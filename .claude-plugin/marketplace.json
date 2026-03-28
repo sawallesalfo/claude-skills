@@ -1,0 +1,13 @@
+{
+  "name": "sawallesalfo-claude-skills",
+  "owner": {
+    "name": "sawallesalfo"
+  },
+  "plugins": [
+    {
+      "name": "arch-diagram",
+      "source": "./plugins/arch-diagram",
+      "description": "Generate technical architecture diagrams as SVG + PNG (pipeline flows, swimlanes, system diagrams)"
+    }
+  ]
+}

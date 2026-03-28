@@ -1,0 +1,5 @@
+{
+  "name": "arch-diagram",
+  "version": "1.0.0",
+  "description": "Generate technical architecture diagrams as SVG + PNG (pipeline flows, swimlanes, system diagrams)"
+}
