@@ -82,7 +82,19 @@ See the [Agent Skills spec](https://agentskills.io) and [Anthropic's documentati
 
 ---
 
-## Usage Example
+## Usage Examples
+
+### Screenshot
+
+After installing `screenshot`, ask Claude:
+
+> *"Take a screenshot of https://github.com/sawallesalfo"*
+
+Claude will capture the page with Playwright and save it as a PNG:
+
+![Screenshot example](./plugins/screenshot/example.png)
+
+### Architecture Diagram
 
 After installing `arch-diagram`, ask Claude:
 
