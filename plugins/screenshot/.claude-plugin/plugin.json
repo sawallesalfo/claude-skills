@@ -1,0 +1,5 @@
+{
+  "name": "screenshot",
+  "version": "1.0.0",
+  "description": "Capture full-page screenshots of any public URL using Playwright headless Chromium — no API key required"
+}

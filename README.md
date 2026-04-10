@@ -9,8 +9,7 @@ A plugin marketplace for [Claude Code](https://claude.ai/code) — technical doc
 | Plugin | Description |
 |--------|-------------|
 | [`arch-diagram`](./plugins/arch-diagram/) | Generate technical architecture diagrams as SVG + PNG (pipeline flows, swimlanes, system diagrams) |
-
-More plugins coming.
+| [`screenshot`](./plugins/screenshot/) | Capture full-page screenshots of any public URL using Playwright headless Chromium — no API key required |
 
 ---
 
