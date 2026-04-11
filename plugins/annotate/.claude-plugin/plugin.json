@@ -1,0 +1,5 @@
+{
+  "name": "annotate",
+  "version": "1.0.0",
+  "description": "Annotate images with rectangles, circles, arrows, and text using ImageMagick — highlight any part of a screenshot"
+}
