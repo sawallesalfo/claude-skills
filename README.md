@@ -10,6 +10,7 @@ A plugin marketplace for [Claude Code](https://claude.ai/code) — technical doc
 |--------|-------------|
 | [`arch-diagram`](./plugins/arch-diagram/) | Generate technical architecture diagrams as SVG + PNG (pipeline flows, swimlanes, system diagrams) |
 | [`screenshot`](./plugins/screenshot/) | Capture full-page screenshots of any public URL using Playwright headless Chromium — no API key required |
+| [`annotate`](./plugins/annotate/) | Annotate images with rectangles, circles, arrows, and text using ImageMagick — highlight any part of a screenshot |
 
 ---
 
@@ -93,6 +94,16 @@ After installing `screenshot`, ask Claude:
 Claude will capture the page with Playwright and save it as a PNG:
 
 ![Screenshot example](./plugins/screenshot/example.png)
+
+### Annotate
+
+After installing `annotate`, ask Claude:
+
+> *"Encadre le tableau dans le screenshot"*
+
+Claude will draw a red rectangle around the specified area:
+
+![Annotate example](./plugins/annotate/example.png)
 
 ### Architecture Diagram
 

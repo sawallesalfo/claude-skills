@@ -66,21 +66,29 @@ Examples:
 
 ### Step 3 — Take the screenshot
 
-Run this command, substituting the URL and derived filename:
+By default, capture only the **visible viewport** (like a real screen), NOT the full scrollable page.
+Use `--viewport-size "1920,1080"` for a crisp 1080p screenshot.
 
+**Default command (viewport only — like a real screen):**
 ```bash
-npx playwright screenshot --full-page --wait-for-timeout 3000 "URL" "FILENAME"
+npx playwright screenshot --wait-for-timeout 3000 --viewport-size "1920,1080" "URL" "FILENAME"
 ```
 
-**Options to use depending on context:**
-- `--full-page` — captures the entire scrollable page (always use)
-- `--wait-for-timeout 3000` — wait 3 seconds for JS to load (default)
+**Only use `--full-page` if the user explicitly asks for the entire page:**
+```bash
+npx playwright screenshot --full-page --wait-for-timeout 3000 --viewport-size "1920,1080" "URL" "FILENAME"
+```
+
+**Options:**
+- `--viewport-size "1920,1080"` — 1080p resolution (always use)
+- `--wait-for-timeout 3000` — wait 3 seconds for JS to load
+- `--full-page` — ONLY when user asks for entire scrollable page
 - `--ignore-https-errors` — add if the site has SSL issues
 - `--block-service-workers` — add if the page is slow or uses service workers
 
 If the default screenshot fails (e.g., timeout, rendering issues), retry with extended options:
 ```bash
-npx playwright screenshot --full-page --wait-for-timeout 5000 --block-service-workers --ignore-https-errors "URL" "FILENAME"
+npx playwright screenshot --wait-for-timeout 5000 --viewport-size "1920,1080" --block-service-workers --ignore-https-errors "URL" "FILENAME"
 ```
 
 After running, verify the file was created and is non-empty:
